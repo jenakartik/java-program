@@ -1,0 +1,31 @@
+*program for check the number is coming in fibonaci series or not
+
+
+import java.util.*;
+public class Fibo {
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		int n,a=0,b=1,p,i=1;
+		System.out.println("Enter a no:");
+		int c=0;
+		n=sc.nextInt();
+		p=n;
+		while(i<=n)
+		{
+			c=a+b;
+			a=b;
+			b=c;
+			i++;
+		}
+		if(p==c)
+		{
+			System.out.println("no is coming in series");
+		}
+		else
+		{
+			System.out.println("no is not coming in series");
+		}
+	}
+
+}
