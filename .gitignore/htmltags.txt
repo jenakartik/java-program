@@ -1,0 +1,72 @@
+*program for read a html file and count all tags
+
+
+
+
+
+
+public class Readfile
+{
+	
+		public static void main(String[] args)throws IOException
+			{
+			 // We need to provide file path as the parameter:
+			  // double backquote is to avoid compiler interpret words
+			  // like \test as \t (ie. as a escape sequence)
+			try{
+			 //here we give the path where html file is present
+			 File f = new File("C:\\html file\\mypage.html");
+			 //use map to store key with value
+			 LinkedHashMap<String, Integer> map = new LinkedHashMap<String, Integer>();
+			  BufferedReader br = new BufferedReader(new FileReader(f));
+			//use a string to storing all string in a html file
+			  String st;
+			  String temp="";
+			  //read line by line untill comes the null
+			  while ((st = br.readLine()) != null) 
+			  {
+			 // System.out.println(st);
+				 //this output reads only html file
+			    int i = 0;
+				while (i != (st.length()))
+				{
+					if (st.charAt(i) == '<' && st.charAt(i + 1) != '/')
+					{
+						while (st.charAt(i) != '>')
+						{
+							temp = temp + st.charAt(i);
+							i++;
+						}			
+						temp = temp + st.charAt(i);
+						if (map.containsKey(temp))
+						{
+							int value = map.get(temp);
+							map.put(temp, ++value);
+						}
+						else 
+						{
+							map.put(temp, 1);
+						}
+						temp = "";
+					}
+					i++;
+				} 
+				System.out.println(st);
+				
+			} 
+				System.out.println("Counting total html tag used in my html file: ");
+				Set<Map.Entry<String, Integer>> entries = map.entrySet();
+				for (Map.Entry<String, Integer> entry : entries)
+				{
+					System.out.println("Tag: " + entry.getKey() + 
+							":" +entry.getValue()+" times");
+				}
+			}
+      catch (Exception e)
+		{
+			System.out.println("Exception occurring on your program ");
+
+		}
+	}
+}
+		
