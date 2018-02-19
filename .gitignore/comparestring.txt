@@ -1,0 +1,64 @@
+import java.util.Scanner;
+public class Comparestring {
+	public static void main(String[] args) {
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Enter the string1: ");
+			String sen1 = sc.nextLine() + " ";
+
+			System.out.println("Enter the string2: ");
+			String sen2 = sc.nextLine() + " ";
+			System.out.println("Duplicate word are: ");
+			//PrintDuplicateWordFirstOne.printDuplicates(sen1, sen2);
+			
+			String temp1 = "";
+			String temp2 = "";
+			for (int i = 0; i < sen1.length(); i++)
+			{
+				if (sen1.charAt(i) != ' ')
+				{
+					temp1 = temp1 + sen1.charAt(i);
+				}
+				else
+				{
+				for (int j = 0; j < sen2.length(); j++)
+				{
+				   if (sen2.charAt(j) != ' ')
+				   {
+					 temp2 = temp2 + sen2.charAt(j);
+				   }
+					else 
+					{
+					   if (temp1.length() == temp2.length()) 
+					   {
+						  boolean flag = true;
+						  int count = 0;
+						  while (temp2.length() > count)
+						  {
+							  if (temp1.charAt(count) != temp2.charAt(count))
+							  {
+								flag = false;
+								break;
+								
+							   }
+								count++;
+							} // while condition
+
+							if (flag)
+								{
+									System.out.print(temp1 + " ");
+								}
+
+						} // if condition
+							temp2 = "";
+					  } // else condition
+
+					} // inner for loop
+					temp1 = "";
+				} // else condition
+
+			} // Outer for loop
+
+		}
+
+
+}
