@@ -1,0 +1,26 @@
+import java.util.*;
+public class Countvowel {
+	public static void main(String args[])
+	{
+		String s;
+		int count=0;
+		String uppercase;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter a string");
+		s=sc.nextLine();
+		uppercase=s.toUpperCase();
+		//lowercase=s.toLowerCase();
+		for(int i=0;i<s.length();i++)
+		{
+			char ch=s.charAt(i);
+			if(ch=='a'||ch=='A'||ch=='e'||ch=='E'||ch=='i'||ch=='I'||ch=='o'||ch=='O'||ch=='u'||ch=='U')
+			{
+				count++;
+			}
+		}
+		System.out.println("no of vowel:"+count);
+		System.out.println("upper case is:"+uppercase);
+		//System.out.println("lower case is:"+lowercase);
+	}
+
+}
