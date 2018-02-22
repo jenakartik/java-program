@@ -1,0 +1,26 @@
+import java.util.*;
+
+public class shortedarraylist {
+
+	public static void main(String[] args) {
+		
+		ArrayList<Integer> al=new ArrayList<Integer>();
+		al.add(23);
+		al.add(68);
+		al.add(43);
+		al.add(95);
+		
+		System.out.println("Before Sorting:");
+		   //for(String str: arraylist){
+				System.out.println(al);
+			//}
+		Collections.sort(al, Collections.reverseOrder());
+		System.out.println("ArrayList in descending order:");
+		  // for(String str: arraylist){
+				System.out.println(al);
+			//}
+		
+
+	}
+
+}
