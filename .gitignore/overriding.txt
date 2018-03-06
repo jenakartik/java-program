@@ -1,0 +1,32 @@
+/*this is the example of overriding */
+
+
+
+
+class  test{
+	void show()
+	{
+		System.out.println("my name is kartik");
+	}
+}
+class test1 extends test{
+	void show()
+	{
+		System.out.println("i am from odisha");
+	}
+}
+
+public class overriding {
+
+	public static void main(String[] args) {
+		test ob=new test();
+		ob.show();
+		//test1 ob1=new test1();
+		//ob1.show();
+		//ob1.print();
+		//test ob2=new test1();
+		//ob2.show();
+
+	}
+
+}
