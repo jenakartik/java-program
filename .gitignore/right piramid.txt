@@ -1,0 +1,32 @@
+public class rightpiramid {
+
+	public static void main(String[] args)
+	{
+		for(int i=5;i>=1;i--)
+		{
+			for(int j=1;j<i;j++)
+			{
+				System.out.print(" ");
+			}
+			for(int k=5;k>=i;k--)
+			{
+				System.out.print(i);
+				
+			}
+			System.out.println("\n");
+		}
+
+	}
+
+}
+
+
+//if print * then            if print i then                    if print k then
+/*      *                            5                                       5
+ *     **                           44                                      54
+ *    ***                          333                                     543
+ *   ****                         2222                                    5432
+ *  *****  */                 // 11111                                 //54321
+
+
+
