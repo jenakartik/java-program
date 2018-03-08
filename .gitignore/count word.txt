@@ -1,0 +1,35 @@
+//This is the program of count word in a string without using function
+
+public class countword {
+
+	public static void main(String[] args) {
+		int count=0;
+		String str= "He is the one";
+			str =str + " ";
+			char[] ch =str.toCharArray();
+			String temp="";
+			String word="";
+			
+			for (int i =0; i < ch.length; i++)
+			{
+				if (ch[i] == ' ')
+				{
+					count++;
+					System.out.println(temp+" "+count);
+					word=word+temp+count ;
+					temp= "";
+					 
+				}
+				else
+				{
+					temp =temp + ch[i]; 
+					
+				}
+			}
+			System.out.println(word);
+			
+
+
+	}
+
+}
